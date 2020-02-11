@@ -50,7 +50,6 @@ window.onload = function () {
 		posicaoTabuleiro.onclick = function(){
 			let idClick = this.id;
 			$('#' + idClick).off();
-			console.log(idClick);
 			jogada(idClick);
 		}
 	}
@@ -69,8 +68,9 @@ window.onload = function () {
 			ponto = 1;
 		}
 		rodada++;
-		$('#' + id).css('background-image', icone);
-		var linha_coluna = id.split('-');
+		idMatriz = document.querySelector('#' + id);
+		idMatriz.style.backgroundImage = icone;
+		let linha_coluna = id.split('-');
 
 		matriz_jogo[linha_coluna[0]][linha_coluna[1]] = ponto;
 
